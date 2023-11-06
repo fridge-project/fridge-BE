@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Fridge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Ingredients.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/FridgeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -70,6 +73,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.excludes"
   }
 }]]></component>
