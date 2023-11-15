@@ -1,19 +1,24 @@
 package exProject.fridge.apiController;
 
 import exProject.fridge.dto.ResponseDto;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/token") // 안드로이드에서 넘어온 토큰
+@RestController
 public class TokenController {
 
-    @PostMapping
+    @PostMapping("/token")// 안드로이드에서 넘어온 토큰
     public ResponseDto<Integer> processToken(@RequestBody TokenRequest tokenRequest) {
         // 받아온 토큰을 처리하는 로직을 작성합니다.
         String receivedToken = tokenRequest.getToken();
-
         // 여기에 토큰 처리 로직을 추가하세요.
         // 예를 들어, 토큰을 검증하고 유효한지 확인하는 등의 작업을 수행합니다.
 
@@ -24,14 +29,10 @@ public class TokenController {
 }
 
 // 토큰을 받기 위한 요청 객체
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 class TokenRequest {
     private String token;
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
 }
