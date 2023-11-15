@@ -77,7 +77,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/jsgcy/codes/JAVA/JavaPractice",
+    "last_opened_file_path": "C:/Users/jsgcy/codes/SpringBoot/fridge-BE/fridge/src/test/java/exProject/fridge/service",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -86,13 +86,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jsgcy\codes\SpringBoot\fridge-BE\fridge\src\test\java\exProject\fridge\service" />
       <recent name="D:\codes\SpringBoot\fridge-BE\fridge\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jsgcy\codes\SpringBoot\fridge-BE\fridge\src\main\java\exProject\fridge\repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FridgeApplication">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
     <configuration name="FridgeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exProject.fridge.FridgeApplication" />
       <module name="fridge.main" />
@@ -112,12 +113,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fridge.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exProject.fridge.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exProject.fridge.service" />
+      <option name="MAIN_CLASS_NAME" value="exProject.fridge.service.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.FridgeApplication" />
+      <item itemvalue="JUnit.UserServiceTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="Application.FridgeApplication" />
       </list>
     </recent_temporary>
