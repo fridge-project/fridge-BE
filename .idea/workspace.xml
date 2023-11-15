@@ -93,7 +93,7 @@
       <recent name="C:\Users\jsgcy\codes\SpringBoot\fridge-BE\fridge\src\main\java\exProject\fridge\repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest">
+  <component name="RunManager" selected="Application.FridgeApplication">
     <configuration name="FridgeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exProject.fridge.FridgeApplication" />
       <module name="fridge.main" />
@@ -135,8 +135,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="Application.FridgeApplication" />
+        <item itemvalue="JUnit.UserServiceTest" />
       </list>
     </recent_temporary>
   </component>
