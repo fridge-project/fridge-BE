@@ -44,7 +44,6 @@
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/FridgeRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -88,6 +87,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\codes\SpringBoot\fridge-BE\fridge\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jsgcy\codes\SpringBoot\fridge-BE\fridge\src\main\java\exProject\fridge\repository" />
     </key>
   </component>
   <component name="RunManager" selected="Application.FridgeApplication">
