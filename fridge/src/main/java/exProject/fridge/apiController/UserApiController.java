@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserApiController {
-// test
     @Autowired
     private UserService userService;
 
