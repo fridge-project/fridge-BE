@@ -13,9 +13,9 @@ public class UserService {
     private UserRepository userRepository;
 
     @Transactional
-    public boolean signup(User user) {
-        if(userRepository.findByUsername(user.getUsername()) == null) {
-            userRepository.save(user); // username 중복 아니면 가입
+    public boolean signup(User user) { // 수정해야함!!!
+        if(userRepository.findByEmail(user.getEmail()) == null) {
+            userRepository.save(user); // Email 중복 아니면 가입
             return true;
         }
         return false;
@@ -23,13 +23,12 @@ public class UserService {
 
     @Transactional(readOnly = true) // SELECT 할 때 트랜잭션 시작, 서비스 종료 시에 트랜잭션 종료 ( 정합성 )
     public User login(User user) {
-        return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+        return userRepository.findByEmailAndPassword(user.getEmail(), user.getPassword());
     }
 
     @Transactional(readOnly = true)
     public boolean idCheck(User user) {
-        if(userRepository.findByUsername(user.getUsername()) != null) return true;
+        if(userRepository.findByEmail(user.getEmail()) != null) return true;
         return false;
     }
-
 }

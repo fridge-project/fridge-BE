@@ -14,21 +14,27 @@ import lombok.NoArgsConstructor;
 public class Fridge {
     // id(AutoIncrement)
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 외래키 두개 합쳐서 PK로 변경
     private int id;
 
     // 사용자 id - 외래키
     @ManyToOne
-    @JoinColumn(name = "userId", referencedColumnName = "id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     User user;
 
     // 재료코드 - 외래키
     @ManyToOne
-    @JoinColumn(name = "ingreId", referencedColumnName = "id")
-    Ingredients ingredients;
+    @JoinColumn(name = "ingre_id", referencedColumnName = "id")
+    Ingredient ingredient;
 
     // 유통기한 - null 가능
     @Column(length = 30) // 날짜로 변경해야함
     private String exp;
+
+    @Enumerated(EnumType.STRING)
+    private StorageType storage;
+
+    @Column(length = 100)
+    private String memo;
 
 }
