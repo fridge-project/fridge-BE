@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/AccountType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/CategoryType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/ClassificationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Recipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/StorageType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Fridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Fridge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Ingredients.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +45,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -43,11 +55,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -73,19 +85,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jsgcy/codes/SpringBoot/fridge-BE/fridge/src/test/java/exProject/fridge/service&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jsgcy\codes\SpringBoot\fridge-BE\fridge\src\test\java\exProject\fridge\service" />
@@ -150,6 +154,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697516481095</updated>
+      <workItem from="1700577268973" duration="91000" />
+      <workItem from="1700577372966" duration="18000" />
     </task>
     <servers />
   </component>
