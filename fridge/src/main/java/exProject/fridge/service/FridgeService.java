@@ -14,10 +14,10 @@ public class FridgeService {
     private FridgeRepository fridgeRepository;
 
     @Transactional // 재료 존재 여부
-    public void isExist(int user_id, int ingre_id) {
-         fridgeRepository.findIngredients(user_id, ingre_id);
+    public boolean isExist(int user_id, int ingre_id) { // 오류
+         if(fridgeRepository.findIngredients(user_id, ingre_id) != null) return true;
 
-
+         return false;
     }
 
     @Transactional // 재료 추가
