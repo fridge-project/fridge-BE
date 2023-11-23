@@ -11,15 +11,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
+@IdClass(FridgeId.class)
 public class Fridge {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // 외래키 두개 합쳐서 PK로 변경
-    private int id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY) // 외래키 두개 합쳐서 PK로 변경
+//    private int id;
 
+    @Id
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     User user; // 사용자 id - 외래키
 
+    @Id
     @ManyToOne
     @JoinColumn(name = "ingre_id", referencedColumnName = "id")
     Ingredient ingredient; // 재료코드 - 외래키
@@ -28,6 +31,7 @@ public class Fridge {
     private String exp; // 유통기한 - null 가능
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private StorageType storage; // 보관 방법
 
     @Column(length = 100)
