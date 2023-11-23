@@ -26,7 +26,7 @@ public class UserServiceTest {
         // given
         User user = new User();
         user.setId(1);
-        user.setUsername("Shin");
+        user.setEmail("Shin");
         user.setPassword("qwer");
 
         // when
