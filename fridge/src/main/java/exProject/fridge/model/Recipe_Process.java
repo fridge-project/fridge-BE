@@ -22,7 +22,7 @@ public class Recipe_Process {
     private Recipe recipe; // 레시피 코드
 
     @Column(nullable = false, length = 11)
-    private int order; // 설명 순서
+    private int orderNum; // 설명 순서
 
     @Column(nullable = false, length = 100)
     private String detail; // 설명
