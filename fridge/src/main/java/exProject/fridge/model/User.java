@@ -13,18 +13,17 @@ import lombok.NoArgsConstructor;
 @Entity
 public class User {
 
-    // 닉네임, password
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id; // PK_auto
 
     @Column(nullable = false, length = 100, unique = true)
-    private String email;
+    private String email; // 이메일
 
     @Column(nullable = false, length = 100)
-    private String password;
+    private String password; // 비밀번호
 
     @Enumerated(EnumType.STRING)
-    private AccountType account;
+    private AccountType account; // 로그인 유형
 
 }
