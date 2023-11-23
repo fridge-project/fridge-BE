@@ -1,5 +1,6 @@
 package exProject.fridge.service;
 
+import exProject.fridge.model.AccountType;
 import exProject.fridge.model.User;
 import exProject.fridge.service.UserService;
 import org.junit.Assert;
@@ -25,9 +26,9 @@ public class UserServiceTest {
     public void 회원가입() throws Exception {
         // given
         User user = new User();
-        user.setId(1);
         user.setEmail("Shin");
         user.setPassword("qwer");
+        user.setAccount(AccountType.SELF);
 
         // when
         boolean signup = userService.signup(user);
@@ -35,4 +36,15 @@ public class UserServiceTest {
         // then
         assertTrue(signup);
     }
+
+    @Test
+    public void 로그인() throws Exception {
+        // given
+
+        // when
+
+        // then
+
+    }
+
 }
