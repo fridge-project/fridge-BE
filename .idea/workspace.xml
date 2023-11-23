@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/IngredientRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/IngredientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/AccountType.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/AccountType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/FridgeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/FridgeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/FridgeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/FridgeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/test/java/exProject/fridge/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/test/java/exProject/fridge/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -121,14 +131,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceTest.회원가입" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fridge.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exProject.fridge.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="exProject.fridge.service" />
+      <option name="MAIN_CLASS_NAME" value="exProject.fridge.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="회원가입" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.FridgeApplication" />
       <item itemvalue="JUnit.UserServiceTest" />
+      <item itemvalue="JUnit.UserServiceTest.회원가입" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.FridgeApplication" />
+        <item itemvalue="JUnit.UserServiceTest.회원가입" />
         <item itemvalue="JUnit.UserServiceTest" />
       </list>
     </recent_temporary>
