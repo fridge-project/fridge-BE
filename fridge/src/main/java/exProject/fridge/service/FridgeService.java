@@ -2,6 +2,8 @@ package exProject.fridge.service;
 
 import exProject.fridge.model.Fridge;
 import exProject.fridge.model.FridgeId;
+import exProject.fridge.model.Ingredient;
+import exProject.fridge.model.User;
 import exProject.fridge.repository.FridgeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,11 @@ public class FridgeService {
     @Transactional // 재료 추가
     public void addIngredient(Fridge fridge) {
         fridgeRepository.save(fridge);
+    }
+
+    @Transactional
+    public Fridge getIngredient(User user) {
+        return fridgeRepository.findByUserId(user.getId());
     }
 
 
