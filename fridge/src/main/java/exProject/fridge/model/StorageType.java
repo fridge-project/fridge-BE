@@ -1,5 +1,5 @@
 package exProject.fridge.model;
 
 public enum StorageType {
-    COLD, FROZEN, ROOM;
+    COLD, FROZEN, ETC;
 }
