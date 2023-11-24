@@ -5,7 +5,6 @@ import exProject.fridge.model.Fridge;
 import exProject.fridge.model.Ingredient;
 import exProject.fridge.model.StorageType;
 import exProject.fridge.model.User;
-import exProject.fridge.repository.IngredientRepository;
 import exProject.fridge.service.FridgeService;
 import exProject.fridge.service.IngredientService;
 import jakarta.servlet.http.HttpSession;
@@ -14,10 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class FridgeApiController {
@@ -60,20 +56,18 @@ public class FridgeApiController {
         // 2-2. 동일 재료가 없으면 등록 후 성공 return
         fridge.setUser(user);
 
-        System.out.println("-----------");
-        System.out.println(fridge);
-        System.out.println("-----------");
-
         fridgeService.addIngredient(fridge);
 
-        return new ResponseDto<>(HttpStatus.OK.value(), 1);
+        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 
     @GetMapping("/fridge") // 보유 재료 확인
-    public ResponseDto<String> getIngredients() {
+    public ResponseDto<Fridge> getIngredients() {
+        User user = (User)(session.getAttribute("principal"));
 
+        Fridge data = fridgeService.getIngredient(user);
 
-        return new ResponseDto<>(HttpStatus.OK.value(), "미완");
+        return new ResponseDto<Fridge>(HttpStatus.OK.value(), data);
     }
 
 }
