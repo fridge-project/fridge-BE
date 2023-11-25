@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class FridgeApiController {
     @Autowired
@@ -62,12 +64,12 @@ public class FridgeApiController {
     }
 
     @GetMapping("/fridge") // 보유 재료 확인
-    public ResponseDto<Fridge> getIngredients() {
+    public ResponseDto<List<Fridge>> getIngredients() {
         User user = (User)(session.getAttribute("principal"));
 
-        Fridge data = fridgeService.getIngredient(user);
+        List<Fridge> data = fridgeService.getIngredient(user);
 
-        return new ResponseDto<Fridge>(HttpStatus.OK.value(), data);
+        return new ResponseDto<List<Fridge>>(HttpStatus.OK.value(), data);
     }
 
 }

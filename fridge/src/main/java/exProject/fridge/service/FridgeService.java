@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class FridgeService {
 
@@ -28,9 +30,11 @@ public class FridgeService {
     }
 
     @Transactional
-    public Fridge getIngredient(User user) {
+    public List<Fridge> getIngredient(User user) {
+
+        List<Fridge> res = fridgeRepository.findByUserId(user.getId());
+
         return fridgeRepository.findByUserId(user.getId());
     }
-
-
+    
 }
