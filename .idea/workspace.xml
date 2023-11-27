@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7e08933-9197-4655-a441-6ccd5565e531" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/dto/IngredientDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/dto/IngredientDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
