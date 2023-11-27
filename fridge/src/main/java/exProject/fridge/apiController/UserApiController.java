@@ -38,4 +38,6 @@ public class UserApiController {
             else return new ResponseDto<Integer>(HttpStatus.UNAUTHORIZED.value(), 0); // id 존재x
         }
     }
+
+    @PostMapping
 }
