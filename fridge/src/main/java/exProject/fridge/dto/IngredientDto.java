@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class IngredientDto {
+    private int userId;
     private String name;
     private String exp;
     private String memo;
