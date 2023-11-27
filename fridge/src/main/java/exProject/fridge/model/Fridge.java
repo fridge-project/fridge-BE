@@ -36,5 +36,4 @@ public class Fridge {
 
     @Column(length = 100)
     private String memo;
-
 }

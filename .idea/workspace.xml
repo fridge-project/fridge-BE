@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/AccountType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/CategoryType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/ClassificationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Recipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/StorageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Fridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Fridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Ingredients.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/test/java/exProject/fridge/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/test/java/exProject/fridge/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +44,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
