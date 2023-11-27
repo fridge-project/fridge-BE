@@ -1,5 +1,6 @@
 package exProject.fridge.service;
 
+import exProject.fridge.dto.IngredientDto;
 import exProject.fridge.model.Fridge;
 import exProject.fridge.model.FridgeId;
 import exProject.fridge.model.Ingredient;
@@ -29,9 +30,10 @@ public class FridgeService {
     }
 
     @Transactional
-    public List<Fridge> getIngredient(User user) {
+    public List<IngredientDto> getIngredient(User user) {
 
         List<Fridge> res = fridgeRepository.findByUserId(user.getId());
+
 
         return fridgeRepository.findByUserId(user.getId());
     }

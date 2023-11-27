@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/dto/IngredientDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/FridgeApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/FridgeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/FridgeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
