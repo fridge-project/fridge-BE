@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
     <list default="true" id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/dto/IngredientDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/resources/application.properties" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,15 +78,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/jsgcy/codes/JAVA/JavaPractice",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jsgcy\codes\SpringBoot\fridge-BE\fridge\src\test\java\exProject\fridge\service" />
