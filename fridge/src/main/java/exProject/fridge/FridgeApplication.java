@@ -11,4 +11,4 @@ public class FridgeApplication {
 	}
 
 }
-// model -> 레시피 재료 정보, 즐겨찾기 생성	
+// model -> 레시피 재료 정보, 즐겨찾기 생성
