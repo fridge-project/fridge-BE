@@ -6,7 +6,6 @@ import exProject.fridge.model.Ingredient;
 import exProject.fridge.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import java.util.List;
 
 public interface FridgeRepository extends JpaRepository<Fridge, FridgeId> {

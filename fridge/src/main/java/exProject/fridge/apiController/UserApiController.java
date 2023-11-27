@@ -47,5 +47,4 @@ public class UserApiController {
         return new ResponseDto<>(HttpStatus.OK.value(), 1); // 미완
     }
 
-
 }
