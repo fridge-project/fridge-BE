@@ -30,10 +30,9 @@ public class FridgeService {
     }
 
     @Transactional
-    public List<IngredientDto> getIngredient(User user) {
+    public List<Fridge> getIngredient(User user) {
 
         List<Fridge> res = fridgeRepository.findByUserId(user.getId());
-
 
         return fridgeRepository.findByUserId(user.getId());
     }
