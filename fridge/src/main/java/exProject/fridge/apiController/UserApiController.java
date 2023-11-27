@@ -41,4 +41,11 @@ public class UserApiController {
             else return new ResponseDto<Integer>(HttpStatus.UNAUTHORIZED.value(), 0); // id 존재x
         }
     }
+
+    @PostMapping("/logout") // 로그아웃
+    public ResponseDto<Integer> logout(@RequestBody User user) {
+        return new ResponseDto<>(HttpStatus.OK.value(), 1); // 미완
+    }
+
+
 }

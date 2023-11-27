@@ -13,7 +13,6 @@ import java.util.List;
 
 @Service
 public class FridgeService {
-
     @Autowired
     private FridgeRepository fridgeRepository;
 
@@ -36,5 +35,4 @@ public class FridgeService {
 
         return fridgeRepository.findByUserId(user.getId());
     }
-    
 }
