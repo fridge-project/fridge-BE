@@ -12,24 +12,23 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Transactional
+    @Transactional // 회원가입
     public boolean signup(User user) {
-        if(userRepository.findByUsername(user.getUsername()) == null) {
-            userRepository.save(user); // username 중복 아니면 가입
+        if(!idCheck(user)) {
+            userRepository.save(user); // Email 중복 아니면 가입
             return true;
         }
         return false;
     }
 
-    @Transactional(readOnly = true) // SELECT 할 때 트랜잭션 시작, 서비스 종료 시에 트랜잭션 종료 ( 정합성 )
+    @Transactional(readOnly = true) // 로그인
     public User login(User user) {
-        return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+        return userRepository.findByEmailAndAccountAndPassword(user.getEmail(),user.getAccount(), user.getPassword());
     }
 
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true) // id 존재 여부
     public boolean idCheck(User user) {
-        if(userRepository.findByUsername(user.getUsername()) != null) return true;
+        if(userRepository.findByEmailAndAccount(user.getEmail(), user.getAccount()) != null) return true;
         return false;
     }
-
 }
