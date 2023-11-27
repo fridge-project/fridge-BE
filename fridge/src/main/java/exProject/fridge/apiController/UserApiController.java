@@ -34,6 +34,7 @@ public class UserApiController {
 
         if(principal != null) {
             session.setAttribute("principal", principal);
+            System.out.println("--------------------------------------------");
             return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); // 로그인 성공(200)
         }
         else {
