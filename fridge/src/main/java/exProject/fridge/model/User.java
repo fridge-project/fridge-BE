@@ -21,7 +21,7 @@ public class User {
     private String email; // 이메일
 
     @Column(nullable = false, length = 100)
-    private String password; // 비밀번호
+    private String password; // 비밀번호 z
 
     @Enumerated(EnumType.STRING)
     private AccountType account; // 로그인 유형
