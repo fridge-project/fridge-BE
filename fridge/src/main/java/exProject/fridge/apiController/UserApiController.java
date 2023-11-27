@@ -31,6 +31,7 @@ public class UserApiController {
     public ResponseDto<Integer> login(@RequestBody User user) {
         user.setAccount(SELF);
         User principal = userService.login(user);
+
         if(principal != null) {
             session.setAttribute("principal", principal);
             return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); // 로그인 성공(200)
