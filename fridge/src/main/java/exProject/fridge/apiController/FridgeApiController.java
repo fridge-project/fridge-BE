@@ -1,5 +1,6 @@
 package exProject.fridge.apiController;
 
+import exProject.fridge.dto.IngredientDto;
 import exProject.fridge.dto.ResponseDto;
 import exProject.fridge.model.Fridge;
 import exProject.fridge.model.Ingredient;
@@ -9,6 +10,7 @@ import exProject.fridge.service.FridgeService;
 import exProject.fridge.service.IngredientService;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,24 +30,14 @@ public class FridgeApiController {
     @Autowired
     private HttpSession session;
 
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Data
-    static class RequestIngre {
-        private String name;
-        private String exp;
-        private String memo;
-        private String storage;
-    }
-
     @PostMapping("/fridge") // 재료 등록
-    public ResponseDto<Integer> addIngredients(@RequestBody RequestIngre requestIngre) {
+    public ResponseDto<Integer> addIngredients(@RequestBody IngredientDto ingredientDto) {
         Fridge fridge = new Fridge();
-        fridge.setExp(requestIngre.getExp());
-        fridge.setMemo(requestIngre.getMemo());
-        fridge.setStorage(StorageType.valueOf(requestIngre.getStorage()));
+        fridge.setExp(ingredientDto.getExp());
+        fridge.setMemo(ingredientDto.getMemo());
+        fridge.setStorage(StorageType.valueOf(ingredientDto.getStorage()));
 
-        Ingredient ingredient = ingredientService.getIngredient(requestIngre.getName());
+        Ingredient ingredient = ingredientService.getIngredient(ingredientDto.getName());
         fridge.setIngredient(ingredient);
 
         User user = (User)(session.getAttribute("principal"));
@@ -71,5 +63,4 @@ public class FridgeApiController {
 
         return new ResponseDto<List<Fridge>>(HttpStatus.OK.value(), data);
     }
-
 }
