@@ -31,4 +31,5 @@ public class UserService {
         if(userRepository.findByEmailAndAccount(user.getEmail(), user.getAccount()) != null) return true;
         return false;
     }
+
 }

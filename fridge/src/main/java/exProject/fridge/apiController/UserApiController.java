@@ -1,5 +1,6 @@
 package exProject.fridge.apiController;
 
+import exProject.fridge.apiController.kakao.KakaoUserInfo;
 import exProject.fridge.dto.ResponseDto;
 import exProject.fridge.model.AccountType;
 import exProject.fridge.model.User;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import static exProject.fridge.model.AccountType.KAKAO;
 import static exProject.fridge.model.AccountType.SELF;
 
 @RestController

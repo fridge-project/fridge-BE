@@ -1,35 +1,58 @@
 package exProject.fridge.apiController.kakao;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.http.*;
 import org.springframework.web.client.RequestCallback;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
+import java.util.Map;
 
+@Getter @Setter
 public class KakaoUserInfo {
 
     private static final String USER_INFO_URI = "https://kapi.kakao.com/v2/user/me";
     private final RestTemplate restTemplate;
 
-    public KakaoUserInfo(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
-
     private KakaoToken kakaoToken;
 
-    public void fetchDataWithHeaders() {
+    public KakaoUserInfo(RestTemplate restTemplate, KakaoToken kakaoToken) {
+        this.restTemplate = restTemplate;
+        this.kakaoToken = kakaoToken;
+    }
+
+    public String fetchDataWithHeaders() {
+        System.out.println(kakaoToken.getToken());
         // HttpHeaders 객체 생성
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-        headers.set("Authorization", "Bearer " + kakaoToken.getToken());  // 예시: 인증 토큰을 설정하는 경우
+        headers.set("Authorization", "Bearer " + kakaoToken);
+        System.out.println("headers = " + headers);
 
-        // RequestCallback을 사용하여 요청 전에 헤더 설정
-        RequestCallback requestCallback = restTemplate.httpEntityCallback(new HttpEntity<>(headers));
+        // GET 요청
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(USER_INFO_URI, String.class, headers);
 
-        // ResponseExtractor를 사용하여 응답 처리
-        ResponseExtractor<ResponseEntity<String>> responseExtractor = restTemplate.responseEntityExtractor(String.class);
+        // 요청에 대한 응답 처리
+        String responseBody = responseEntity.getBody();
 
-        // exchange 메소드를 사용하여 요청 보내기 (GET 방식 예시)
-        ResponseEntity<String> response = restTemplate.execute(USER_INFO_URI, HttpMethod.GET, requestCallback, responseExtractor);
+        try {
+            // jackson objectmapper 객체 생성
+            ObjectMapper objectMapper = new ObjectMapper();
 
+            Map<String, Object> jsonMap = objectMapper.readValue(responseBody, new TypeReference<Map<String, Object>>() {
+            });
+
+            Map<String, Object> kakao_account = (Map<String, Object>) jsonMap.get("kakao_account");
+            System.out.println("kakao_account = " + kakao_account);
+
+            String email = kakao_account.get("email").toString();
+            return email;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
