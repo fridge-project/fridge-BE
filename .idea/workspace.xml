@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f51dbd-d421-4ff2-aab3-5c698ed89604" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/fridge/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/.gitignore" afterDir="false" />
+    <list default="true" id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="">
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +23,47 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\codes\SpringBoot\fridge-BE-fork\fridge-BE\fridge\src\main\java\exProject\fridge\apiController" />
+      <recent name="D:\codes\SpringBoot\fridge-BE-fork\fridge-BE\fridge\src\main\java\exProject\fridge\service" />
+      <recent name="D:\codes\SpringBoot\fridge-BE-fork\fridge-BE\fridge\src\main\java\exProject\fridge\repository" />
+      <recent name="D:\codes\SpringBoot\fridge-BE-fork\fridge-BE\fridge\src\main\java\exProject\fridge\model" />
+      <recent name="D:\codes\SpringBoot\fridge-BE\fridge\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.FridgeApplication">
+    <configuration name="FridgeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exProject.fridge.FridgeApplication" />
+      <module name="fridge.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exProject.fridge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FridgeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.FridgeApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FridgeApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -32,9 +32,4 @@ public class UserService {
         return false;
     }
 
-    @Transactional(readOnly = true) // 세션 대용(임시)
-    public User userCheck(int userId) {
-        return userRepository.findById(userId);
-    }
-
 }
