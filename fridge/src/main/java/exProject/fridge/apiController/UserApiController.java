@@ -22,6 +22,7 @@ public class UserApiController {
     @PostMapping("/signup") // 회원가입
     public ResponseDto<Integer> signup(@RequestBody User user) {
         user.setAccount(SELF); // 자체 로그인
+
         boolean result = userService.signup(user);
         if(result) return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); // 회원가입 성공(200)
         return new ResponseDto<Integer>(HttpStatus.UNAUTHORIZED.value(), 0); // 회원가입 실패(401)
@@ -31,9 +32,10 @@ public class UserApiController {
     public ResponseDto<Integer> login(@RequestBody User user) {
         user.setAccount(SELF);
         User principal = userService.login(user);
+
         if(principal != null) {
             session.setAttribute("principal", principal);
-            return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); // 로그인 성공(200)
+            return new ResponseDto<Integer>(HttpStatus.OK.value(), principal.getId()); // 로그인 성공(200)
         }
         else {
             boolean idExist = userService.idCheck(user);

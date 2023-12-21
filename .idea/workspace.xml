@@ -5,83 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/fridge-BE.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/kakao/KakaoApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/kakao/KakaoToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/kakao/KakaoUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/AccountType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/CategoryType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/ClassificationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Fridge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/FridgeId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Recipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Recipe_Process.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/StorageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/FridgeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/IngredientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/FridgeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/IngredientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$/fridge">
-      <ProjectState />
-    </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
-      </map>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2WsLiYThxbkTw0hwfHnZq6IoWhy" />
+  <component name="ProjectId" id="2YlLx5SyRGYDy864FU3EqHV24e8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -132,11 +68,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="" />
-      <created>1697516481095</created>
+      <changelist id="67f51dbd-d421-4ff2-aab3-5c698ed89604" name="Changes" comment="" />
+      <created>1701095467628</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1697516481095</updated>
+      <updated>1701095467628</updated>
     </task>
     <servers />
   </component>
@@ -152,7 +88,17 @@
     </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
+    <expand>
+      <path>
+        <item name="fridge-BE" type="b2602c69:ProjectViewProjectNode" />
+        <item name="fridge-BE" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="fridge-BE" type="b2602c69:ProjectViewProjectNode" />
+        <item name="fridge-BE" type="462c0819:PsiDirectoryNode" />
+        <item name="fridge" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
     <select />
   </component>
 </project>

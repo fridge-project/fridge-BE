@@ -1,5 +1,6 @@
 package exProject.fridge.service;
 
+
 import exProject.fridge.model.Fridge;
 import exProject.fridge.model.FridgeId;
 import exProject.fridge.model.Ingredient;

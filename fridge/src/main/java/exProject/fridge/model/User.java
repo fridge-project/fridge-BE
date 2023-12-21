@@ -23,6 +23,7 @@ public class User {
     @Column(nullable = false, length = 100)
     private String password; // 비밀번호
 
+
     @Enumerated(EnumType.STRING)
     private AccountType account; // 로그인 유형
 
