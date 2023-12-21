@@ -19,9 +19,9 @@ public class FridgeService {
 
     @Transactional // 재료 존재 여부
     public boolean isExist(int user_id, int ingre_id) { // 오류
-         if(fridgeRepository.findIngredients(user_id, ingre_id) != null) return true;
+        if (fridgeRepository.findIngredients(user_id, ingre_id) != null) return true;
 
-         return false;
+        return false;
     }
 
     @Transactional // 재료 추가

@@ -50,7 +50,7 @@ public class FridgeApiController {
         Ingredient ingredient = ingredientService.getIngredient(requestIngre.getName());
         fridge.setIngredient(ingredient);
 
-        User user = (User)(session.getAttribute("principal"));
+        User user = (User) (session.getAttribute("principal"));
 
         // 1. 재료가 있나?
 //        boolean exist = fridgeService.isExist(user.getId(), ingredient.getId());
@@ -69,7 +69,7 @@ public class FridgeApiController {
 
     @GetMapping("/fridge") // 보유 재료 확인
     public ResponseDto<List<Fridge>> getIngredients() {
-        User user = (User)(session.getAttribute("principal"));
+        User user = (User) (session.getAttribute("principal"));
 
 
         List<Fridge> data = fridgeService.getIngredient(user);
