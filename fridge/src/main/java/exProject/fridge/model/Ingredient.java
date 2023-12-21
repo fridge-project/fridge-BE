@@ -11,19 +11,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-public class User {
-
+public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // PK_auto
 
-    @Column(nullable = false, length = 100, unique = true)
-    private String email; // 이메일
+    @Column(nullable = false, length = 20, unique = true)
+    private String name; // 재료명
 
     @Column(nullable = false, length = 100)
-    private String password; // 비밀번호
-
-    @Enumerated(EnumType.STRING)
-    private AccountType account; // 로그인 유형
-
+    private String imageURL; // 이미지url
 }

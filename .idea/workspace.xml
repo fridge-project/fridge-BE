@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="421da461-1dc0-4974-aa43-900bdbcab917" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/fridge-BE.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/kakao/KakaoApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/kakao/KakaoToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/kakao/KakaoUserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/AccountType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/CategoryType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/ClassificationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Fridge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/FridgeId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Ingredient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Recipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/Recipe_Process.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/StorageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/FridgeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/IngredientRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/FridgeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/IngredientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/apiController/UserApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,15 +86,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.excludes"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fridge/src/main/java/exProject/fridge/service" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\codes\SpringBoot\fridge-BE-fork\fridge-BE\fridge\src\main\java\exProject\fridge\apiController" />
+      <recent name="D:\codes\SpringBoot\fridge-BE-fork\fridge-BE\fridge\src\main\java\exProject\fridge\service" />
+      <recent name="D:\codes\SpringBoot\fridge-BE-fork\fridge-BE\fridge\src\main\java\exProject\fridge\repository" />
+      <recent name="D:\codes\SpringBoot\fridge-BE-fork\fridge-BE\fridge\src\main\java\exProject\fridge\model" />
       <recent name="D:\codes\SpringBoot\fridge-BE\fridge\src\main\resources" />
     </key>
   </component>
