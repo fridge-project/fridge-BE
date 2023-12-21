@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fridge.iml" filepath="$PROJECT_DIR$/.idea/modules/fridge.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/fridge-BE.iml" filepath="$PROJECT_DIR$/.idea/fridge-BE.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fridge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fridge.test.iml" />
     </modules>
   </component>
 </project>
