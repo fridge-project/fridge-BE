@@ -23,7 +23,7 @@ public class UserService {
 
     @Transactional(readOnly = true) // 로그인
     public User login(User user) {
-        return userRepository.findByEmailAndAccountAndPassword(user.getEmail(),user.getAccount(), user.getPassword());
+        return userRepository.findByEmailAndAccountAndPassword(user.getEmail(), user.getAccount(), user.getPassword());
     }
 
     @Transactional(readOnly = true) // id 존재 여부

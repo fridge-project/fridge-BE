@@ -1,6 +1,5 @@
 package exProject.fridge.apiController;
 
-import exProject.fridge.apiController.kakao.KakaoUserInfo;
 import exProject.fridge.dto.ResponseDto;
 import exProject.fridge.model.AccountType;
 import exProject.fridge.model.User;
