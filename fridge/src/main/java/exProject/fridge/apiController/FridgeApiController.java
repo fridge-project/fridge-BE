@@ -1,5 +1,7 @@
 package exProject.fridge.apiController;
 
+import exProject.fridge.dto.AddIngredientDto;
+import exProject.fridge.dto.RequestWithUseridDto;
 import exProject.fridge.dto.ResponseDto;
 import exProject.fridge.model.Fridge;
 import exProject.fridge.model.Ingredient;
@@ -7,6 +9,7 @@ import exProject.fridge.model.StorageType;
 import exProject.fridge.model.User;
 import exProject.fridge.service.FridgeService;
 import exProject.fridge.service.IngredientService;
+import exProject.fridge.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +29,9 @@ public class FridgeApiController {
     private IngredientService ingredientService;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private HttpSession session;
 
     @NoArgsConstructor
@@ -39,16 +45,17 @@ public class FridgeApiController {
     }
 
     @PostMapping("/fridge") // 재료 등록
-    public ResponseDto<Integer> addIngredients(@RequestBody RequestIngre requestIngre) {
+    public ResponseDto<Integer> addIngredients(@RequestBody AddIngredientDto addIngredientDto) {
         Fridge fridge = new Fridge();
-        fridge.setExp(requestIngre.getExp());
-        fridge.setMemo(requestIngre.getMemo());
-        fridge.setStorage(StorageType.valueOf(requestIngre.getStorage()));
+        fridge.setExp(addIngredientDto.getExp());
+        fridge.setMemo(addIngredientDto.getMemo());
+        fridge.setStorage(StorageType.valueOf(addIngredientDto.getStorage()));
 
-        Ingredient ingredient = ingredientService.getIngredient(requestIngre.getName());
+        Ingredient ingredient = ingredientService.getIngredient(addIngredientDto.getName());
         fridge.setIngredient(ingredient);
 
-        User user = (User)(session.getAttribute("principal"));
+        User user = userService.getUser(addIngredientDto.getUserId());
+
         // 1. 재료가 있나?
 //        boolean exist = fridgeService.isExist(user.getId(), ingredient.getId());
 
@@ -56,6 +63,7 @@ public class FridgeApiController {
 //        if(exist) return new ResponseDto<>(HttpStatus.UNAUTHORIZED.value(), 0);
 
         // 2-2. 동일 재료가 없으면 등록 후 성공 return
+
         fridge.setUser(user);
 
         fridgeService.addIngredient(fridge);
@@ -63,9 +71,9 @@ public class FridgeApiController {
         return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 
-    @GetMapping("/fridge") // 보유 재료 확인
-    public ResponseDto<List<Fridge>> getIngredients() {
-        User user = (User)(session.getAttribute("principal"));
+    @PostMapping("/getFridge") // 보유 재료 확인
+    public ResponseDto<List<Fridge>> getIngredients(@RequestBody RequestWithUseridDto request) {
+        User user = userService.getUser(request.getUserId());
 
         List<Fridge> data = fridgeService.getIngredient(user);
 

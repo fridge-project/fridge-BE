@@ -36,7 +36,7 @@ public class KakaoController {
         kakaoUser.setName(kakaoDto.getName());
         kakaoUser.setEmail(kakaoDto.getEmail());
         kakaoUser.setAccount(KAKAO); // 자체 로그인
-        
+
         boolean result = userService.signup(kakaoUser);
         if(result) return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); // 회원가입 성공(200)
         return new ResponseDto<Integer>(HttpStatus.UNAUTHORIZED.value(), 0); // 회원가입 실패(401)
@@ -51,8 +51,8 @@ public class KakaoController {
         kakaoUser.setAccount(KAKAO); // 자체 로그인
         userService.login(kakaoUser);
 
-        User principal = userService.login(kakaoUser);
-        if(principal != null) {
+        int principal = userService.login(kakaoUser);
+        if(principal != -1) {
             session.setAttribute("principal", principal);
             return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); // 로그인 성공(200)
         }

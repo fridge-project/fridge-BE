@@ -5,6 +5,7 @@ import exProject.fridge.model.FridgeId;
 import exProject.fridge.model.Ingredient;
 import exProject.fridge.model.User;
 import exProject.fridge.repository.FridgeRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,9 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class FridgeService {
     @Autowired
-    private FridgeRepository fridgeRepository;
+    private final FridgeRepository fridgeRepository;
 
     @Transactional // 재료 존재 여부
     public boolean isExist(int user_id, int ingre_id) { // 오류

@@ -22,14 +22,20 @@ public class UserService {
     }
 
     @Transactional(readOnly = true) // 로그인
-    public User login(User user) {
-        return userRepository.findByEmailAndAccountAndPassword(user.getEmail(), user.getAccount(), user.getPassword());
+    public int login(User user) {
+        User cur = userRepository.findByEmailAndAccountAndPassword(user.getEmail(),user.getAccount(), user.getPassword());
+        if(cur != null) return cur.getId();
+        else return -1;
     }
 
     @Transactional(readOnly = true) // id 존재 여부
     public boolean idCheck(User user) {
         if(userRepository.findByEmailAndAccount(user.getEmail(), user.getAccount()) != null) return true;
-        return false;
+        else return false;
     }
 
+    @Transactional(readOnly = true) // user정보 가져오기
+    public User getUser(int userId) {
+        return userRepository.findById(userId);
+    }
 }

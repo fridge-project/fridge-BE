@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class IngredientDto {
+public class AddIngredientDto {
     private int userId;
     private String name;
     private String exp;
     private String memo;
     private String storage;
-    private String imageURL;
 }
