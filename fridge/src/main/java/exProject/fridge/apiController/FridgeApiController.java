@@ -3,10 +3,7 @@ package exProject.fridge.apiController;
 import exProject.fridge.dto.AddIngredientDto;
 import exProject.fridge.dto.RequestWithUseridDto;
 import exProject.fridge.dto.ResponseDto;
-import exProject.fridge.model.Fridge;
-import exProject.fridge.model.Ingredient;
-import exProject.fridge.model.StorageType;
-import exProject.fridge.model.User;
+import exProject.fridge.model.*;
 import exProject.fridge.service.FridgeService;
 import exProject.fridge.service.IngredientService;
 import exProject.fridge.service.UserService;
@@ -20,19 +17,20 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 public class FridgeApiController {
     @Autowired
-    private FridgeService fridgeService;
+    private final FridgeService fridgeService;
 
     @Autowired
-    private IngredientService ingredientService;
+    private final IngredientService ingredientService;
 
     @Autowired
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
-    private HttpSession session;
+    private final HttpSession session;
 
     @NoArgsConstructor
     @AllArgsConstructor
@@ -72,12 +70,20 @@ public class FridgeApiController {
     }
 
     @PostMapping("/getFridge") // 보유 재료 확인
-    public ResponseDto<List<Fridge>> getIngredients(@RequestBody RequestWithUseridDto request) {
+    public ResponseDto<List<ResFridge>> getIngredients(@RequestBody RequestWithUseridDto request) {
         User user = userService.getUser(request.getUserId());
 
-        List<Fridge> data = fridgeService.getIngredient(user);
+        List<ResFridge> data = fridgeService.getIngredient(user);
 
-        return new ResponseDto<List<Fridge>>(HttpStatus.OK.value(), data);
+        return new ResponseDto<List<ResFridge>>(HttpStatus.OK.value(), data);
+    }
+
+    @PostMapping("/delFridge") // 보유 재료 삭제
+    public ResponseDto<Integer> delIngredients(@RequestBody RequestWithUseridDto<Integer> request) {
+        fridgeService.delIngredient(request.getUserId(), request.getData());
+
+        return new ResponseDto<Integer>(
+                HttpStatus.OK.value(), 1);
     }
 
 }

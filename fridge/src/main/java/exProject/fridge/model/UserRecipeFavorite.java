@@ -19,6 +19,6 @@ public class UserRecipeFavorite {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "recipe_id", referencedColumnName = "recipe_code")
+    @JoinColumn(name = "recipe_id", referencedColumnName = "recipeCode")
     private Recipe recipe;
 }

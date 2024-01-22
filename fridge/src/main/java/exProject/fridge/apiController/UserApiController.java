@@ -43,16 +43,18 @@ public class UserApiController {
     @PostMapping("/login") // jwt 로그인
     public ResponseDto login(@RequestBody User user) {
 
+        UserLoginResponseDto loginResponse = new UserLoginResponseDto();
+
         user.setAccount(SELF);
-        if(!userService.idCheck(user)) return new ResponseDto<Integer>(HttpStatus.UNAUTHORIZED.value(), 0); // id 존재x
+        if(!userService.idCheck(user)) return new ResponseDto<UserLoginResponseDto>(HttpStatus.UNAUTHORIZED.value(), loginResponse); // id 존재x
 
         user.setId(userService.login(user));
-        if(user.getId() == -1) return new ResponseDto<Integer>(HttpStatus.UNAUTHORIZED.value(), 10); // id/pw 오류
+        if(user.getId() == -1) return new ResponseDto<UserLoginResponseDto>(HttpStatus.UNAUTHORIZED.value(), loginResponse); // id/pw 오류
 
         String accessToken = jwtTokenizer.createAccessToken(user.getId(), user.getEmail());
         String refreshToken = jwtTokenizer.createRefreshToken(user.getId(), user.getEmail());
 
-        UserLoginResponseDto loginResponse = UserLoginResponseDto.builder()
+        loginResponse = UserLoginResponseDto.builder()
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
                 .userId(user.getId())

@@ -18,7 +18,6 @@ public class UserService {
 
     @Autowired
     private final UserRepository userRepository;
-
     @Autowired
     private final UserRecipeFavoriteRepository userRecipeFavoriteRepository;
 

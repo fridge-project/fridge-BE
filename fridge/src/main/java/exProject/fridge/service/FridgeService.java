@@ -1,9 +1,6 @@
 package exProject.fridge.service;
 
-import exProject.fridge.model.Fridge;
-import exProject.fridge.model.FridgeId;
-import exProject.fridge.model.Ingredient;
-import exProject.fridge.model.User;
+import exProject.fridge.model.*;
 import exProject.fridge.repository.FridgeRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +28,16 @@ public class FridgeService {
     }
 
     @Transactional
-    public List<Fridge> getIngredient(User user) {
+    public List<ResFridge> getIngredient(User user) {
 
-        List<Fridge> res = fridgeRepository.findByUserId(user.getId());
+        List<ResFridge> res = fridgeRepository.findByUserId(user.getId());
 
         return fridgeRepository.findByUserId(user.getId());
+    }
+
+    @Transactional
+    public void delIngredient(int user_id, int ingre_id) {
+//        fridgeRepository.delIngredients(user_id, ingre_id);
+        fridgeRepository.deleteById(new FridgeId(user_id, ingre_id));
     }
 }
