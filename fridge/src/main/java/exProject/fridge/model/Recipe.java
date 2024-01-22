@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -39,4 +41,7 @@ public class Recipe {
 
     @Column(nullable = false, length = 100)
     private  String imageURL; // 이미지url
+
+    @OneToMany(mappedBy = "recipe")
+    private Set<UserRecipeFavorite> favoritedByUser;
 }

@@ -17,7 +17,12 @@ public class RecipeService {
     private final RecipeRepository recipeRepository;
 
     @Transactional
-    public List<Recipe> getRecipe() {
+    public List<Recipe> getAllRecipes() {
         return recipeRepository.findAll();
+    }
+
+    @Transactional
+    public Recipe getOneRecipe(int recipe_code) {
+        return recipeRepository.findByRecipeCode(recipe_code);
     }
 }

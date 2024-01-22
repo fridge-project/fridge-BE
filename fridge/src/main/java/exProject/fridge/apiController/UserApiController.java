@@ -4,13 +4,17 @@ import exProject.fridge.dto.ResponseDto;
 import exProject.fridge.dto.UserLoginResponseDto;
 import exProject.fridge.jwt.JwtTokenizer;
 import exProject.fridge.model.AccountType;
+import exProject.fridge.model.Recipe;
 import exProject.fridge.model.User;
+import exProject.fridge.model.UserRecipeFavorite;
 import exProject.fridge.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 import static exProject.fridge.model.AccountType.KAKAO;
 import static exProject.fridge.model.AccountType.SELF;
@@ -30,8 +34,6 @@ public class UserApiController {
     @PostMapping("/signup") // 회원가입
     public ResponseDto<Integer> signup(@RequestBody User user) {
         user.setAccount(SELF); // 자체 로그인
-
-
 
         boolean result = userService.signup(user);
         if(result) return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); // 회원가입 성공(200)
@@ -62,6 +64,12 @@ public class UserApiController {
     @PostMapping("/logout") // 로그아웃
     public ResponseDto<Integer> logout(@RequestBody User user) {
         return new ResponseDto<>(HttpStatus.OK.value(), 1); // 미완
+    }
+
+    @GetMapping("/favorites")
+    public ResponseDto<List<UserRecipeFavorite>> getFavoriteRecipes(@RequestBody User user) {
+        List<UserRecipeFavorite> favoriteRecipes = userService.getFavoriteRecipes(user);
+        return new ResponseDto<>(HttpStatus.OK.value(), favoriteRecipes);
     }
 
 }

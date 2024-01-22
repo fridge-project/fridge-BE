@@ -8,4 +8,7 @@ import java.util.List;
 public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
 
     List<Recipe> findAll();
+
+    Recipe findByRecipeCode(int recipe_code);
+
 }
