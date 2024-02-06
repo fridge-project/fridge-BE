@@ -24,11 +24,11 @@ public class Recipe {
     @Column(nullable = false, length = 200)
     private String introduce; // 간략 소개
 
-    @Enumerated(EnumType.STRING)
-    private CategoryType category; // 유형 분류
+    @Column(nullable = false, length = 20)
+    private String category; // 유형 분류
 
-    @Enumerated(EnumType.STRING)
-    private ClassificationType classification; // 음식 분류
+    @Column(nullable = false, length = 20)
+    private String classification; // 음식 분류
 
     @Column(nullable = false, length = 10)
     private int time; // 조리 시간
@@ -41,6 +41,9 @@ public class Recipe {
 
     @Column(nullable = false, length = 100)
     private  String imageURL; // 이미지url
+
+    @Column(nullable = false, length = 10)
+    private int calorie; // 칼로리
 
     @OneToMany(mappedBy = "recipe")
     private Set<UserRecipeFavorite> favoritedByUser;
