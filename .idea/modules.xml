@@ -3,10 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/fridge-BE.iml" filepath="$PROJECT_DIR$/.idea/fridge-BE.iml" />
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fridge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fridge.main.iml" />
-=======
->>>>>>> 9f7e3e1560c0c8e826a7622ca31abd0aaba7fe2a
     </modules>
   </component>
 </project>
