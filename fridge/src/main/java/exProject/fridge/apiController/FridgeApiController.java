@@ -48,6 +48,7 @@ public class FridgeApiController {
         fridge.setExp(addIngredientDto.getExp());
         fridge.setMemo(addIngredientDto.getMemo());
         fridge.setStorage(StorageType.valueOf(addIngredientDto.getStorage()));
+        fridge.setAddDate(addIngredientDto.getAddDate());
 
         Ingredient ingredient = ingredientService.getIngredient(addIngredientDto.getName());
         fridge.setIngredient(ingredient);
