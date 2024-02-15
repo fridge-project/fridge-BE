@@ -30,6 +30,9 @@ public class Fridge {
     @Column(length = 30) // 날짜로 변경해야함
     private String exp; // 유통기한 - null 가능
 
+    @Column(length = 30) // 날짜로 변경해야함 // erd다이어그램 추가
+    private String addDate; // 등록날짜
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StorageType storage; // 보관 방법

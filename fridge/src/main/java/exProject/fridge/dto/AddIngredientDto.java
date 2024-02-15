@@ -13,6 +13,7 @@ public class AddIngredientDto {
     private int userId;
     private String name;
     private String exp;
+    private String addDate;
     private String memo;
     private String storage;
 }
