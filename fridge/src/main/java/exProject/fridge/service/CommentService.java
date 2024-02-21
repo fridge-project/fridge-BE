@@ -25,4 +25,10 @@ public class CommentService {
     public void addComment(Comment comment) {
         commentRepository.save(comment);
     }
+
+    @Transactional // 댓글 삭제
+    public void delComment(int userId) {
+        commentRepository.delete(commentRepository.findByUserId(userId));
+    }
+
 }

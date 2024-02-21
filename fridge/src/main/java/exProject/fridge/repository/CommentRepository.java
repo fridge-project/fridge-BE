@@ -11,4 +11,6 @@ public interface CommentRepository extends JpaRepository<Comment, CommentId> {
 
     @Query(value = "SELECT f FROM Comment f WHERE f.user_id = :user_id AND f.recipe_id = :recipe_id", nativeQuery = true)
     Comment findComments(User user, Recipe recipe);
+
+    Comment findByUserId(int userId);
 }
