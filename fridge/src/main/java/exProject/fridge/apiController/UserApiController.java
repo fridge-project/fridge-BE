@@ -1,5 +1,6 @@
 package exProject.fridge.apiController;
 
+import exProject.fridge.dto.RequestWithUseridDto;
 import exProject.fridge.dto.ResponseDto;
 import exProject.fridge.dto.UserLoginResponseDto;
 import exProject.fridge.jwt.JwtTokenizer;
@@ -10,15 +11,16 @@ import exProject.fridge.model.UserRecipeFavorite;
 import exProject.fridge.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static exProject.fridge.model.AccountType.KAKAO;
 import static exProject.fridge.model.AccountType.SELF;
 
+@Slf4j
 @RestController
 @AllArgsConstructor
 public class UserApiController {
@@ -68,9 +70,28 @@ public class UserApiController {
         return new ResponseDto<>(HttpStatus.OK.value(), 1); // 미완
     }
 
-    @GetMapping("/favorites")
+    @GetMapping("/favorites") // 즐겨찾기 목록 // GET 요청인데 RequestBody가 있는게 좀 이상함. 나중에 수정해야할듯.
     public ResponseDto<List<UserRecipeFavorite>> getFavoriteRecipes(@RequestBody User user) {
         List<UserRecipeFavorite> favoriteRecipes = userService.getFavoriteRecipes(user);
+        return new ResponseDto<>(HttpStatus.OK.value(), favoriteRecipes);
+    }
+
+    @PostMapping("/favorites/delete") // 즐겨찾기 삭제
+    public ResponseDto<List<UserRecipeFavorite>> deleteFavorites(@RequestBody RequestWithUseridDto<UserRecipeFavorite> request) {
+        // 유저 정보를 불러옴
+        User user = userService.getUser(request.getUserId());
+        log.info("user = {}", user);
+
+        // 삭제할 즐겨찾기 레시피 불러옴
+        UserRecipeFavorite favorite = request.getData();
+        log.info("favorite = {}", favorite);
+
+        // 레시피 삭제
+        userService.deleteFavoriteRecipe(favorite);
+
+        // 삭제하고 다시 즐겨찾기 목록을 반환
+        List<UserRecipeFavorite> favoriteRecipes = userService.getFavoriteRecipes(user);
+        log.info("favoriteRecipes = {}", favoriteRecipes);
         return new ResponseDto<>(HttpStatus.OK.value(), favoriteRecipes);
     }
 

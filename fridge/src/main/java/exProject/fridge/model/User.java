@@ -31,7 +31,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     private AccountType account; // 로그인 유형
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<UserRecipeFavorite> favoriteRecipes;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<LikeRecipe> likeRecipes;
 
 }

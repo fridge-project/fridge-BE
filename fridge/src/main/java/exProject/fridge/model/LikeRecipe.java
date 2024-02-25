@@ -1,14 +1,16 @@
 package exProject.fridge.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class UserRecipeFavorite {
+public class LikeRecipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +23,8 @@ public class UserRecipeFavorite {
     @ManyToOne
     @JoinColumn(name = "recipe_id", referencedColumnName = "recipeCode")
     private Recipe recipe;
+
+    @Column(name = "likeColumn")
+    private boolean like = false;
+
 }

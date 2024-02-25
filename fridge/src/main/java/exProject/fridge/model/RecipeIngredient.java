@@ -11,20 +11,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Recipe_Process {
+public class RecipeIngredient {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id; // PK_auto
-
     @ManyToOne
     @JoinColumn(name = "recipe_code", referencedColumnName = "recipeCode")
-    private Recipe recipe; // 레시피 코드
+    Recipe recipe; // 레시피 코드 - 외래키
 
-    @Column(nullable = false, length = 11)
-    private int orderNum; // 설명 순서
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "ingre_id", referencedColumnName = "id")
+    Ingredient ingredient; // 재료코드 - 외래키
 
-    @Column(nullable = false, length = 100)
-    private String detail; // 설명
-
+    @Column(nullable = false, length = 20)
+    private String amount; // 설명
 }
+
