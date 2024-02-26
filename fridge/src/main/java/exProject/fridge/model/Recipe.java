@@ -45,6 +45,10 @@ public class Recipe {
     @Column(nullable = false, length = 10)
     private int calorie; // 칼로리
 
-    @OneToMany(mappedBy = "recipe")
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+
     private Set<UserRecipeFavorite> favoritedByUser;
+
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    private Set<LikeRecipe> likedByUser;
 }
