@@ -46,6 +46,7 @@ public class Recipe {
     private int calorie; // 칼로리
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+
     private Set<UserRecipeFavorite> favoritedByUser;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)

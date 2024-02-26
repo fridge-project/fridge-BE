@@ -14,4 +14,3 @@ public interface CommentRepository extends JpaRepository<Comment, CommentId> {
 
     Comment findByUserId(int userId);
 }
-

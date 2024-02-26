@@ -33,4 +33,3 @@ public class Comment {
     private String imageURL; // 이미지url
 
 }
-
