@@ -16,7 +16,7 @@ public class CommentService {
 
     @Transactional // 댓글 존재 여부
     public boolean isExist(Comment comment) { // 오류
-        if(commentRepository.findComments(comment.getUser(), comment.getRecipe()) != null) return true;
+        if(commentRepository.findComments(comment.getUser().getId(), comment.getRecipe().getId()) != null) return true;
 
         return false;
     }
@@ -27,8 +27,8 @@ public class CommentService {
     }
 
     @Transactional // 댓글 삭제
-    public void delComment(int userId) {
-        commentRepository.delete(commentRepository.findByUserId(userId));
-    }
+    public void delComment(int userId, int recipeId) {
+        commentRepository.delete(commentRepository.findByUserIdAndRecipeId(userId, recipeId));
 
+    }
 }
