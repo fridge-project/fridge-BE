@@ -43,6 +43,7 @@ public class CommentApiController {
 
         Recipe recipe = recipeService.getOneRecipe(addCommentDto.getRecipeId());
         comment.setRecipe(recipe);
+        System.out.println(comment);
 
 //        if(commentService.isExist(comment)) return new ResponseDto<>(HttpStatus.UNAUTHORIZED.value(), 0);
 
@@ -53,8 +54,8 @@ public class CommentApiController {
     }
 
     @PostMapping("/delComment") // 댓글 삭제
-    public ResponseDto<Integer> delComment(@RequestBody RequestWithUseridDto request) {
-        commentService.delComment(request.getUserId());
+    public ResponseDto<Integer> delComment(@RequestBody RequestWithUseridDto<Integer> request) {
+        commentService.delComment(request.getUserId(), request.getData());
 
         return new ResponseDto<>(HttpStatus.OK.value(), 1);
     }
