@@ -24,7 +24,7 @@ public class Comment {
     Recipe recipe; // 재료코드 - 외래키
 
     @Column
-    private int grade; // 평점
+    private int grade; // 평점 /
 
     @Column(length = 200)
     private String detail; // 댓글 내용
