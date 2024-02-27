@@ -16,7 +16,7 @@ import java.util.Set;
 public class Recipe {
 
     @Id
-    private int recipeCode; // 레시피 코드
+    private int id; // 레시피 코드
 
     @Column(nullable = false, length = 50)
     private String name; // 음식명

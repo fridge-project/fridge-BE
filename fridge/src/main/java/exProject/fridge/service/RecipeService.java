@@ -23,6 +23,6 @@ public class RecipeService {
 
     @Transactional
     public Recipe getOneRecipe(int recipe_code) {
-        return recipeRepository.findByRecipeCode(recipe_code);
+        return recipeRepository.findById(recipe_code);
     }
 }
