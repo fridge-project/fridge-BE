@@ -9,6 +9,6 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
 
     List<Recipe> findAll();
 
-    Recipe findByRecipeCode(int recipeCode);
+    Recipe findById(int id);
 
 }
