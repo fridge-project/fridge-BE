@@ -27,8 +27,7 @@ public class CommentService {
     }
 
     @Transactional // 댓글 삭제
-    public void delComment(int userId) {
-        commentRepository.delete(commentRepository.findByUserId(userId));
+    public void delComment(int userId, int recipeId) {
+        commentRepository.delete(commentRepository.findByUserIdAndRecipeId(userId, recipeId));
     }
-
 }

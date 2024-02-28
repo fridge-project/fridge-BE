@@ -51,8 +51,8 @@ public class CommentApiController {
     }
 
     @PostMapping("/delComment") // 댓글 삭제
-    public ResponseDto<Integer> delComment(@RequestBody RequestWithUseridDto request) {
-        commentService.delComment(request.getUserId());
+    public ResponseDto<Integer> delComment(@RequestBody RequestWithUseridDto<Integer> request) {
+        commentService.delComment(request.getUserId(), request.getData());
 
         return new ResponseDto<>(HttpStatus.OK.value(), 1);
     }

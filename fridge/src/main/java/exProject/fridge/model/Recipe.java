@@ -16,7 +16,7 @@ import java.util.Set;
 public class Recipe {
 
     @Id
-    private int recipeCode; // 레시피 코드
+    private int id; // 레시피 코드
 
     @Column(nullable = false, length = 50)
     private String name; // 음식명
@@ -40,7 +40,7 @@ public class Recipe {
     private String difficulty; // 난이도
 
     @Column(nullable = false, length = 100)
-    private  String imageURL; // 이미지url
+    private String imageURL; // 이미지url
 
     @Column(nullable = false, length = 10)
     private int calorie; // 칼로리

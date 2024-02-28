@@ -15,7 +15,7 @@ public class RecipeIngredient {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "recipe_code", referencedColumnName = "recipeCode")
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
     Recipe recipe; // 레시피 코드 - 외래키
 
     @Id

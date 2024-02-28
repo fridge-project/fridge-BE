@@ -20,7 +20,7 @@ public class Comment {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "recipe_id", referencedColumnName = "recipeCode")
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
     Recipe recipe; // 재료코드 - 외래키
 
     @Column
