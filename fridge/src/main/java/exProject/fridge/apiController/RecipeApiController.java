@@ -4,10 +4,13 @@ import exProject.fridge.dto.RecipeDto;
 import exProject.fridge.dto.RequestWithUseridDto;
 import exProject.fridge.dto.ResponseDto;
 import exProject.fridge.model.*;
+import exProject.fridge.service.CommentService;
 import exProject.fridge.service.RecipeService;
 import exProject.fridge.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +28,9 @@ public class RecipeApiController {
     private final RecipeService recipeService;
     private final UserService userService;
 
+    @Autowired
+    private final CommentService commentService;
+
     @GetMapping // 레시피 목록
     public ResponseDto<List<Recipe>> getAllRecipes() {
         List<Recipe> allRecipes = recipeService.getAllRecipes();
@@ -36,10 +42,13 @@ public class RecipeApiController {
     public ResponseDto<RecipeDto> getOneRecipe(@PathVariable int id) {
         Recipe oneRecipe = recipeService.getOneRecipe(id);
         List<RecipeProcess> recipeProcess = recipeService.getRecipeProcess(oneRecipe);
-        recipeProcess.stream()
-                .peek(process -> process.setRecipe(null))
-                .collect(Collectors.toList());
-        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess);
+        log.info("recipeProcess = {}", recipeProcess);
+
+        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess, commentService.getComment(id));
+//        recipeProcess.stream()
+//                .peek(process -> process.setRecipe(null))
+//                .collect(Collectors.toList());
+//        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess);
 
         return new ResponseDto(HttpStatus.OK.value(), recipeDto);
     }
