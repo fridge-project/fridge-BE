@@ -29,9 +29,6 @@ public class FridgeApiController {
     @Autowired
     private final UserService userService;
 
-    @Autowired
-    private final HttpSession session;
-
     @NoArgsConstructor
     @AllArgsConstructor
     @Data
