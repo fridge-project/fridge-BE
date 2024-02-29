@@ -40,7 +40,7 @@ public class Recipe {
     private String difficulty; // 난이도
 
     @Column(nullable = false, length = 100)
-    private  String imageURL; // 이미지url
+    private String imageURL; // 이미지url
 
     @Column(nullable = false, length = 10)
     private int calorie; // 칼로리

@@ -30,8 +30,8 @@ public class CommentService {
     }
 
     @Transactional // 댓글 조회
-    public List<ResComment> getComment(int recipeCode) {
-        return commentRepository.findByRecipeId(recipeCode);
+    public List<ResComment> getComment(int recipeId) {
+        return commentRepository.findByRecipeId(recipeId);
     }
 
     @Transactional // 댓글 삭제
