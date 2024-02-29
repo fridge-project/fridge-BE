@@ -1,11 +1,14 @@
 package exProject.fridge.service;
 
 import exProject.fridge.model.Comment;
+import exProject.fridge.model.ResComment;
 import exProject.fridge.repository.CommentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -24,6 +27,11 @@ public class CommentService {
     @Transactional // 댓글 등록
     public void addComment(Comment comment) {
         commentRepository.save(comment);
+    }
+
+    @Transactional // 댓글 조회
+    public List<ResComment> getComment(int recipeCode) {
+        return commentRepository.findByRecipeId(recipeCode);
     }
 
     @Transactional // 댓글 삭제
