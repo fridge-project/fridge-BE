@@ -30,8 +30,9 @@ public class RecipeService {
 
     @Transactional(readOnly = true)
     public Recipe getOneRecipe(int recipe_code) {
-        log.info("recipe: {}", recipeRepository.findById(recipe_code));
-        return recipeRepository.findById(recipe_code);
+
+        log.info("recipe: {}", recipeRepository.findByid(recipe_code));
+        return recipeRepository.findByid(recipe_code);
     }
 
     @Transactional(readOnly = true)

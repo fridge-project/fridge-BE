@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
@@ -31,26 +32,26 @@ public class RecipeApiController {
         return new ResponseDto(HttpStatus.OK.value(), allRecipes);
     }
 
-    @GetMapping("/{recipeCode}") // 레시피 상세페이지
-    public ResponseDto<RecipeDto> getOneRecipe(@PathVariable int recipeCode) {
-        Recipe oneRecipe = recipeService.getOneRecipe(recipeCode);
-        log.info("oneRecipe = {}", oneRecipe);
+    @GetMapping("/{id}") // 레시피 상세페이지
+    public ResponseDto<RecipeDto> getOneRecipe(@PathVariable int id) {
+        Recipe oneRecipe = recipeService.getOneRecipe(id);
         List<RecipeProcess> recipeProcess = recipeService.getRecipeProcess(oneRecipe);
-        log.info("recipeProcess = {}", recipeProcess);
-
+        recipeProcess.stream()
+                .peek(process -> process.setRecipe(null))
+                .collect(Collectors.toList());
         RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess);
 
         return new ResponseDto(HttpStatus.OK.value(), recipeDto);
     }
 
-    @PostMapping("/{recipeCode}") // 즐겨찾기 추가
-    public ResponseDto<UserRecipeFavorite> addFavorites(@PathVariable int recipeCode,
+    @PostMapping("/{id}") // 즐겨찾기 추가
+    public ResponseDto<UserRecipeFavorite> addFavorites(@PathVariable int id,
                                                         @RequestBody RequestWithUseridDto request) {
         // 사용자 정보를 가져오고
         User user = userService.getUser(request.getUserId());
 
         // 레시피 코드로 레시피 가져오고
-        Recipe recipe = recipeService.getOneRecipe(recipeCode);
+        Recipe recipe = recipeService.getOneRecipe(id);
 
         // 즐겨찾기를 만든다.
         UserRecipeFavorite favorite = new UserRecipeFavorite();
@@ -59,16 +60,16 @@ public class RecipeApiController {
 
         userService.addFavoriteRecipe(favorite);
 
-        return new ResponseDto(HttpStatus.OK.value(), favorite);
+        return new ResponseDto(HttpStatus.OK.value(), null);
     }
 
-    @PostMapping("/{recipeCode}/like") // 레시피 좋아요 or 취소 (처음 좋아요를 눌렀을 때 데이터가 만들어짐)
-    public ResponseDto<LikeRecipe> addlike(@PathVariable int recipeCode,
+    @PostMapping("/{id}/like") // 레시피 좋아요 or 취소 (처음 좋아요를 눌렀을 때 데이터가 만들어짐)
+    public ResponseDto<LikeRecipe> addlike(@PathVariable int id,
                                            @RequestBody RequestWithUseridDto request) {
 
         // 사용자 정보와 레시피 코드를 가져오고
         User user = userService.getUser(request.getUserId());
-        Recipe recipe = recipeService.getOneRecipe(recipeCode);
+        Recipe recipe = recipeService.getOneRecipe(id);
 
         // 한번이라도 좋아요를 누른 레시피인지 확인 -> null일 수도 있기 때문에 Optional사용
         Optional<LikeRecipe> likeRecipeOrNull = userService.getLikeRecipe(user, recipe);

@@ -5,16 +5,21 @@ import exProject.fridge.model.Recipe;
 import exProject.fridge.model.User;
 import exProject.fridge.model.UserRecipeFavorite;
 import exProject.fridge.repository.LikeRecipeRepository;
+import exProject.fridge.repository.RecipeRepository;
 import exProject.fridge.repository.UserRecipeFavoriteRepository;
 import exProject.fridge.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
+@Slf4j
 @Service
 @AllArgsConstructor
 public class UserService {
@@ -23,6 +28,9 @@ public class UserService {
     private final UserRepository userRepository;
     @Autowired
     private final UserRecipeFavoriteRepository userRecipeFavoriteRepository;
+
+    @Autowired
+    private final RecipeRepository recipeRepository;
 
     @Autowired
     private final LikeRecipeRepository likeRecipeRepository;
@@ -61,6 +69,7 @@ public class UserService {
 
     @Transactional // 즐겨찾기 추가
     public void addFavoriteRecipe(UserRecipeFavorite userRecipeFavorite) {
+        // 즐겨찾기 중복 검사 필요할듯
         userRecipeFavoriteRepository.save(userRecipeFavorite);
     }
 
