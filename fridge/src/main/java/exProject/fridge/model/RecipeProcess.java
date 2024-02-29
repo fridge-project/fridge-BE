@@ -18,7 +18,7 @@ public class RecipeProcess {
     private int id; // PK_auto
 
     @ManyToOne
-    @JoinColumn(name = "recipe_code", referencedColumnName = "id")
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
     private Recipe recipe; // 레시피 코드
 
     @Column(nullable = false, length = 11)
