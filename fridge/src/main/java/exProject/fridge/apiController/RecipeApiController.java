@@ -36,10 +36,12 @@ public class RecipeApiController {
     public ResponseDto<RecipeDto> getOneRecipe(@PathVariable int id) {
         Recipe oneRecipe = recipeService.getOneRecipe(id);
         List<RecipeProcess> recipeProcess = recipeService.getRecipeProcess(oneRecipe);
-        recipeProcess.stream()
-                .peek(process -> process.setRecipe(null))
-                .collect(Collectors.toList());
-        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess);
+        log.info("recipeProcess = {}", recipeProcess);
+        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess, commentService.getComment(id));
+//        recipeProcess.stream()
+//                .peek(process -> process.setRecipe(null))
+//                .collect(Collectors.toList());
+//        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess);
 
         return new ResponseDto(HttpStatus.OK.value(), recipeDto);
     }
