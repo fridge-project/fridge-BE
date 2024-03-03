@@ -56,5 +56,4 @@ public class CommentApiController {
 
         return new ResponseDto<>(HttpStatus.OK.value(), 1);
     }
-
 }
