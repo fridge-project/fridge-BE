@@ -32,4 +32,7 @@ public class Comment {
     @Column(length = 100)
     private String imageURL; // 이미지url
 
+    @Column(length = 20)
+    private String date; // 댓글 등록 날짜
+
 }
