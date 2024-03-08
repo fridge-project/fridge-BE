@@ -1,5 +1,6 @@
 package exProject.fridge.service;
 
+import exProject.fridge.dto.GradeDto;
 import exProject.fridge.model.Comment;
 import exProject.fridge.model.ResComment;
 import exProject.fridge.repository.CommentRepository;
@@ -32,6 +33,25 @@ public class CommentService {
     @Transactional // 댓글 조회
     public List<ResComment> getComment(int recipeId) {
         return commentRepository.findByRecipeId(recipeId);
+    }
+
+    @Transactional // 평점 계산
+    public GradeDto calGrade(List<ResComment> resComments) {
+        int one = 0, two = 0, three = 0, four = 0, five = 0;
+
+        for(ResComment res : resComments) {
+            switch (res.getGrade()) {
+                case 1: one++; break;
+                case 2: two++; break;
+                case 3: three++; break;
+                case 4: four++; break;
+                case 5: five++; break;
+            }
+        }
+
+        double avg = (double) (one + two * 2 + three * 3 + four * 4 + five * 5) / resComments.size();
+
+        return new GradeDto(avg, new int[] {one, two, three, four, five});
     }
 
     @Transactional // 댓글 삭제

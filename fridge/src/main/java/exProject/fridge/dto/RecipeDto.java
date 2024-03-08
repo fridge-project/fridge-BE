@@ -18,4 +18,5 @@ public class RecipeDto {
     private Recipe recipe;
     private List<RecipeProcess> recipeProcess;
     private List<ResComment> comments;
+    private GradeDto gradeDto;
 }

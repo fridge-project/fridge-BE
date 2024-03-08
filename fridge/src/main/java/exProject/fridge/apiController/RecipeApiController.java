@@ -1,5 +1,6 @@
 package exProject.fridge.apiController;
 
+import exProject.fridge.dto.GradeDto;
 import exProject.fridge.dto.RecipeDto;
 import exProject.fridge.dto.RequestWithUseridDto;
 import exProject.fridge.dto.ResponseDto;
@@ -44,7 +45,10 @@ public class RecipeApiController {
         List<RecipeProcess> recipeProcess = recipeService.getRecipeProcess(oneRecipe);
         log.info("recipeProcess = {}", recipeProcess);
 
-        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess, commentService.getComment(id));
+        List<ResComment> resComments = commentService.getComment(id);
+        GradeDto gradeDto = commentService.calGrade(resComments);
+
+        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess, resComments, gradeDto);
 //        recipeProcess.stream()
 //                .peek(process -> process.setRecipe(null))
 //                .collect(Collectors.toList());
