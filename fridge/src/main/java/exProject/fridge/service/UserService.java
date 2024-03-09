@@ -35,6 +35,10 @@ public class UserService {
     @Autowired
     private final LikeRecipeRepository likeRecipeRepository;
 
+    public User findUser(int userId) {
+        return userRepository.findById(userId);
+    }
+
     @Transactional // 회원가입
     public boolean signup(User user) {
         if (!idCheck(user)) {

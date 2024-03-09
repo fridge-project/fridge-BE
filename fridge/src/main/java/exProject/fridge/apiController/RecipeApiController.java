@@ -1,5 +1,6 @@
 package exProject.fridge.apiController;
 
+import exProject.fridge.dto.GradeDto;
 import exProject.fridge.dto.RecipeDto;
 import exProject.fridge.dto.RequestWithUseridDto;
 import exProject.fridge.dto.ResponseDto;
@@ -7,6 +8,7 @@ import exProject.fridge.model.*;
 import exProject.fridge.service.CommentService;
 import exProject.fridge.service.RecipeService;
 import exProject.fridge.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +29,6 @@ public class RecipeApiController {
 
     private final RecipeService recipeService;
     private final UserService userService;
-
-    @Autowired
     private final CommentService commentService;
 
     @GetMapping // 레시피 목록
@@ -40,15 +40,19 @@ public class RecipeApiController {
 
     @GetMapping("/{id}") // 레시피 상세페이지
     public ResponseDto<RecipeDto> getOneRecipe(@PathVariable int id) {
+
         Recipe oneRecipe = recipeService.getOneRecipe(id);
         List<RecipeProcess> recipeProcess = recipeService.getRecipeProcess(oneRecipe);
         log.info("recipeProcess = {}", recipeProcess);
 
-        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess, commentService.getComment(id));
-//        recipeProcess.stream()
-//                .peek(process -> process.setRecipe(null))
-//                .collect(Collectors.toList());
-//        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess);
+        recipeProcess.stream()
+                .peek(process -> process.setRecipe(null))
+                .collect(Collectors.toList());
+
+        List<ResComment> resComments = commentService.getComment(id);
+        GradeDto gradeDto = commentService.calGrade(resComments);
+
+        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess, resComments, gradeDto);
 
         return new ResponseDto(HttpStatus.OK.value(), recipeDto);
     }

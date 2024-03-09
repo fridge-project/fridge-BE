@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @RestController
 public class CommentApiController {
@@ -41,6 +43,8 @@ public class CommentApiController {
 
         Recipe recipe = recipeService.getOneRecipe(addCommentDto.getRecipeId());
         comment.setRecipe(recipe);
+
+        comment.setDate(LocalDate.now().toString());
 
 //        if(commentService.isExist(comment)) return new ResponseDto<>(HttpStatus.UNAUTHORIZED.value(), 0);
 

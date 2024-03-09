@@ -27,4 +27,7 @@ public class RecipeProcess {
     @Column(nullable = false, length = 300)
     private String detail; // 설명
 
+    @Column(length = 300)
+    private String imageURL; // 과정 이미지URL
+
 }

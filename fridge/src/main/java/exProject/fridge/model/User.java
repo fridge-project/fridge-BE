@@ -31,6 +31,9 @@ public class User {
     @Enumerated(EnumType.STRING)
     private AccountType account; // 로그인 유형
 
+    @Column
+    private String image; // 프로필 사진
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<UserRecipeFavorite> favoriteRecipes;
 
