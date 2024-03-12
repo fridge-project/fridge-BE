@@ -8,13 +8,9 @@ import exProject.fridge.model.*;
 import exProject.fridge.service.CommentService;
 import exProject.fridge.service.RecipeService;
 import exProject.fridge.service.UserService;
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,11 +35,13 @@ public class RecipeApiController {
     }
 
     @GetMapping("/{id}") // 레시피 상세페이지
-    public ResponseDto<RecipeDto> getOneRecipe(@PathVariable int id) {
+    public ResponseDto<RecipeDto> getOneRecipe(@PathVariable int id,
+                                               @RequestBody RequestWithUseridDto request) {
+
+        User user = userService.getUser(request.getUserId());
 
         Recipe oneRecipe = recipeService.getOneRecipe(id);
         List<RecipeProcess> recipeProcess = recipeService.getRecipeProcess(oneRecipe);
-        log.info("recipeProcess = {}", recipeProcess);
 
         recipeProcess.stream()
                 .peek(process -> process.setRecipe(null))
@@ -52,28 +50,61 @@ public class RecipeApiController {
         List<ResComment> resComments = commentService.getComment(id);
         GradeDto gradeDto = commentService.calGrade(resComments);
 
-        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess, resComments, gradeDto);
+        RecipeDto recipeDto = new RecipeDto(oneRecipe, recipeProcess, resComments, gradeDto, false, false);
+
+        Optional<UserRecipeFavorite> userRecipeFavorite = userService.getFavorite(user, oneRecipe);
+        Optional<LikeRecipe> likeRecipe = userService.getLikeRecipe(user, oneRecipe);
+
+        // null 검사
+        if (!userRecipeFavorite.isEmpty()) {
+            boolean favorite = userRecipeFavorite.get().isFavorite();
+            recipeDto.setFavorite(favorite);
+        }
+
+        if (!likeRecipe.isEmpty()) {
+            boolean like = likeRecipe.get().isLike();
+            recipeDto.setLike(like);
+        }
+
+        log.info("recipeDto = {}", recipeDto);
 
         return new ResponseDto(HttpStatus.OK.value(), recipeDto);
+
     }
 
-    @PostMapping("/{id}") // 즐겨찾기 추가
+    @PostMapping("/{id}/favorite") // 즐겨찾기 추가
     public ResponseDto<UserRecipeFavorite> addFavorites(@PathVariable int id,
                                                         @RequestBody RequestWithUseridDto request) {
-        // 사용자 정보를 가져오고
+        // 사용자 정보와 레시피 코드를 가져오고
         User user = userService.getUser(request.getUserId());
-
-        // 레시피 코드로 레시피 가져오고
         Recipe recipe = recipeService.getOneRecipe(id);
 
-        // 즐겨찾기를 만든다.
-        UserRecipeFavorite favorite = new UserRecipeFavorite();
-        favorite.setUser(user);
-        favorite.setRecipe(recipe);
+        // 한번이라도 즐겨찾기를 누른 레시피인지 확인 -> null일 수도 있기 때문에 Optional사용
+        Optional<UserRecipeFavorite> favoriteRecipeOrNull = userService.getFavorite(user, recipe);
 
-        userService.addFavoriteRecipe(favorite);
+        // 한번도 즐겨찾기를 안눌렀다면 (데이터가 없다면)
+        if (favoriteRecipeOrNull.isEmpty()) {
+            // 데이터를 만들고 true로 바꾼다.
+            UserRecipeFavorite userRecipeFavorite = new UserRecipeFavorite();
+            userRecipeFavorite.setUser(user);
+            userRecipeFavorite.setRecipe(recipe);
+            userRecipeFavorite.setFavorite(true);
 
-        return new ResponseDto(HttpStatus.OK.value(), null);
+            // DB에 저장하고
+            userService.updateFavoriteRecipe(userRecipeFavorite);
+
+            return new ResponseDto(HttpStatus.OK.value(), userRecipeFavorite);
+
+        } else { // 수정의 경우 -> 즐겨찾기를 가져와서 boolean값을 뒤집어준다.
+            UserRecipeFavorite userRecipeFavorite = favoriteRecipeOrNull.get();
+            userRecipeFavorite.setFavorite(!userRecipeFavorite.isFavorite());
+
+            // DB에 저장하고
+            userService.updateFavoriteRecipe(userRecipeFavorite);
+
+            return new ResponseDto(HttpStatus.OK.value(), userRecipeFavorite);
+        }
+
     }
 
     @PostMapping("/{id}/like") // 레시피 좋아요 or 취소 (처음 좋아요를 눌렀을 때 데이터가 만들어짐)

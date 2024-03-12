@@ -19,4 +19,6 @@ public class RecipeDto {
     private List<RecipeProcess> recipeProcess;
     private List<ResComment> comments;
     private GradeDto gradeDto;
+    private boolean favorite;
+    private boolean like;
 }

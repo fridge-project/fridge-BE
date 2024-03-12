@@ -71,15 +71,14 @@ public class UserService {
         return userRecipeFavoriteRepository.findByUser(user);
     }
 
-    @Transactional // 즐겨찾기 추가
-    public void addFavoriteRecipe(UserRecipeFavorite userRecipeFavorite) {
-        // 즐겨찾기 중복 검사 필요할듯
-        userRecipeFavoriteRepository.save(userRecipeFavorite);
+    @Transactional(readOnly = true) // 즐겨찾기를 누른 레시피 조회
+    public Optional<UserRecipeFavorite> getFavorite(User user, Recipe recipe) {
+        return userRecipeFavoriteRepository.findByUserAndRecipe(user, recipe);
     }
 
-    @Transactional // 즐겨찾기 삭제
-    public void deleteFavoriteRecipe(UserRecipeFavorite userRecipeFavorite) {
-        userRecipeFavoriteRepository.delete(userRecipeFavorite);
+    @Transactional // 레시피 즐겨찾기 업데이트
+    public void updateFavoriteRecipe(UserRecipeFavorite UserRecipeFavorite) {
+        userRecipeFavoriteRepository.save(UserRecipeFavorite);
     }
 
     @Transactional(readOnly = true) // 좋아요를 누른 레시피 조회

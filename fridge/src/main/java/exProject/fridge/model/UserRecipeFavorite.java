@@ -17,4 +17,7 @@ public class UserRecipeFavorite {
     @ManyToOne
     @JoinColumn(name = "recipe_id", referencedColumnName = "id")
     private Recipe recipe;
+
+    @Column(name = "favoriteColumn")
+    private boolean favorite = false;
 }
