@@ -63,7 +63,7 @@ public class UserApiController {
         return new ResponseDto<>(HttpStatus.OK.value(), 1); // 미완
     }
 
-    @GetMapping("/favorites") // 즐겨찾기 목록 // GET 요청인데 RequestBody가 있는게 좀 이상함. 나중에 수정해야할듯.
+    @PostMapping("/favorites") // 즐겨찾기 목록 // GET 요청인데 RequestBody가 있는게 좀 이상함. 나중에 수정해야할듯.
     public ResponseDto<List<UserRecipeFavorite>> getFavoriteRecipes(@RequestBody User user) {
         List<UserRecipeFavorite> favoriteRecipes = userService.getFavoriteRecipes(user);
         return new ResponseDto<>(HttpStatus.OK.value(), favoriteRecipes);
