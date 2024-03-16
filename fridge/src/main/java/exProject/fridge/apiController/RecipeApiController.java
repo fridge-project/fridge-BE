@@ -43,9 +43,6 @@ public class RecipeApiController {
         Recipe oneRecipe = recipeService.getOneRecipe(id);
         List<RecipeProcess> recipeProcess = recipeService.getRecipeProcess(oneRecipe);
 
-//        recipeProcess.stream()
-//                .peek(process -> process.setRecipe(null))
-//                .collect(Collectors.toList());
 
         List<ResComment> resComments = commentService.getComment(id);
         GradeDto gradeDto = commentService.calGrade(resComments);

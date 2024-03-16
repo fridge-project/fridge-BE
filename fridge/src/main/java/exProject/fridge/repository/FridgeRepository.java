@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface FridgeRepository extends JpaRepository<Fridge, FridgeId> {
 
-    @Query(value = "SELECT f FROM Fridge f WHERE f.user_id = :user_id AND f.ingre_id = :ingre_id", nativeQuery = true)
-    Fridge findIngredients(int user_id, int ingre_id);
+    @Query(value = "SELECT f FROM Fridge f WHERE f.user.id = :user_id AND f.ingredient.id = :ingre_id")
+    Fridge findIngredient(int user_id, int ingre_id);
 
     List<ResFridge> findByUserId(int user_id);
 
