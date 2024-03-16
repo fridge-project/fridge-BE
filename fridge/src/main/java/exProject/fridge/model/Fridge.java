@@ -40,4 +40,7 @@ public class Fridge {
     @Column(length = 100)
     private String memo; // 메모
 
+    @Column(length = 200)
+    private String imageUrl; // 이미지
+
 }

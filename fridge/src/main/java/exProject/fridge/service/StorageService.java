@@ -21,16 +21,16 @@ public class StorageService {
 
     private final AmazonS3 s3Client;
 
-    public String uploadFile(MultipartFile file, Long memberId) throws IOException {
+    public String uploadFile(MultipartFile file, String imageId) throws IOException {
         File fileObj = convertMultiPartFileToFile(file);
-        String fileName =  Long.toString(memberId);
+        String fileName =  imageId;
         s3Client.putObject(new PutObjectRequest(bucketName, fileName, fileObj));
         fileObj.delete();
         return "File uploaded : " + fileName;
     }
 
-    public void deleteFile(Long memberId) throws IOException {
-        String fileName =  Long.toString(memberId);
+    public void deleteFile(String imageId) throws IOException {
+        String fileName =  imageId;
         s3Client.deleteObject(bucketName, fileName);
     }
 

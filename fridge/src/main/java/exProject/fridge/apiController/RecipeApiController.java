@@ -34,7 +34,7 @@ public class RecipeApiController {
         return new ResponseDto(HttpStatus.OK.value(), allRecipes);
     }
 
-    @GetMapping("/{id}") // 레시피 상세페이지
+    @PostMapping("/{id}") // 레시피 상세페이지
     public ResponseDto<RecipeDto> getOneRecipe(@PathVariable int id,
                                                @RequestBody RequestWithUseridDto request) {
 
@@ -42,10 +42,6 @@ public class RecipeApiController {
 
         Recipe oneRecipe = recipeService.getOneRecipe(id);
         List<RecipeProcess> recipeProcess = recipeService.getRecipeProcess(oneRecipe);
-
-        recipeProcess.stream()
-                .peek(process -> process.setRecipe(null))
-                .collect(Collectors.toList());
 
         List<ResComment> resComments = commentService.getComment(id);
         GradeDto gradeDto = commentService.calGrade(resComments);

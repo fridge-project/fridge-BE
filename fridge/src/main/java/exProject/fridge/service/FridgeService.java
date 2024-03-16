@@ -17,7 +17,7 @@ public class FridgeService {
 
     @Transactional // 재료 존재 여부
     public boolean isExist(int user_id, int ingre_id) { // 오류
-         if(fridgeRepository.findIngredients(user_id, ingre_id) != null) return true;
+         if(fridgeRepository.findIngredient(user_id, ingre_id) != null) return true;
 
          return false;
     }
@@ -28,11 +28,16 @@ public class FridgeService {
     }
 
     @Transactional
-    public List<ResFridge> getIngredient(User user) {
+    public List<ResFridge> getIngredients(User user) {
 
         List<ResFridge> res = fridgeRepository.findByUserId(user.getId());
 
         return fridgeRepository.findByUserId(user.getId());
+    }
+
+    @Transactional(readOnly = true)
+    public Fridge getIngredient(int user_id, int ingre_id) {
+        return fridgeRepository.findIngredient(user_id, ingre_id);
     }
 
     @Transactional

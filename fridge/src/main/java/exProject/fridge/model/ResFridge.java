@@ -9,5 +9,6 @@ public interface ResFridge {
     StorageType getStorage(); // 보관 방법
 
     String getMemo(); // 메모
+    String getImageUrl(); // s3 이미지 경로
 
 }

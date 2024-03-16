@@ -77,8 +77,8 @@ public class UserService {
     }
 
     @Transactional // 레시피 즐겨찾기 업데이트
-    public void updateFavoriteRecipe(UserRecipeFavorite UserRecipeFavorite) {
-        userRecipeFavoriteRepository.save(UserRecipeFavorite);
+    public void updateFavoriteRecipe(UserRecipeFavorite userRecipeFavorite) {
+        userRecipeFavoriteRepository.save(userRecipeFavorite);
     }
 
     @Transactional(readOnly = true) // 좋아요를 누른 레시피 조회
