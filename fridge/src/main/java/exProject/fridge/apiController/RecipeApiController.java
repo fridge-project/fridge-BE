@@ -1,9 +1,6 @@
 package exProject.fridge.apiController;
 
-import exProject.fridge.dto.GradeDto;
-import exProject.fridge.dto.RecipeDto;
-import exProject.fridge.dto.RequestWithUseridDto;
-import exProject.fridge.dto.ResponseDto;
+import exProject.fridge.dto.*;
 import exProject.fridge.model.*;
 import exProject.fridge.service.CommentService;
 import exProject.fridge.service.RecipeService;
@@ -14,8 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
@@ -138,6 +135,13 @@ public class RecipeApiController {
             return new ResponseDto(HttpStatus.OK.value(), likeRecipe);
         }
 
+    }
+
+    @GetMapping("/likeCountList")
+    public ResponseDto<List<LikeCountDto>> getLikeRecipeList() {
+        List<LikeCountDto> likeCountList = recipeService.getLikeCountList();
+
+        return new ResponseDto(HttpStatus.OK.value(), likeCountList);
     }
 
 

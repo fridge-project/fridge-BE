@@ -112,4 +112,5 @@ public class FridgeApiController {
                 HttpStatus.OK.value(), 1);
     }
 
+
 }
