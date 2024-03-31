@@ -26,7 +26,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 public class FridgeApiController {
-    public static final String DEFAULT_IMAGE = "https://fridgeproject.s3.ap-northeast-2.amazonaws.com/default.png";
+    public static final String DEFAULT_FRIDGE = "https://fridgeproject.s3.ap-northeast-2.amazonaws.com/default.png";
     @Autowired
     private final FridgeService fridgeService;
 
@@ -68,7 +68,7 @@ public class FridgeApiController {
 
         if (file.isEmpty()) { // 이미지를 선택하지 않으면 기본이미지로 설정해줌
 
-            fridge.setImageUrl(DEFAULT_IMAGE);
+            fridge.setImageUrl(DEFAULT_FRIDGE);
 
         } else {
 
@@ -99,7 +99,7 @@ public class FridgeApiController {
         String imageId = user.getName() + "_" + request.getData();
         Fridge ingredient = fridgeService.getIngredient(request.getUserId(), request.getData());
 
-        if (ingredient.getImageUrl() == DEFAULT_IMAGE) { // 만약 재료의 이미지가 기본이미지라면 삭제하면 안된다.
+        if (ingredient.getImageUrl() == DEFAULT_FRIDGE) { // 만약 재료의 이미지가 기본이미지라면 삭제하면 안된다.
 
             fridgeService.delIngredient(request.getUserId(), request.getData());
 

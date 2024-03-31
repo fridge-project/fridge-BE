@@ -137,7 +137,7 @@ public class RecipeApiController {
 
     }
 
-    @GetMapping("/likeCountList")
+    @GetMapping("/likeCountList") // 좋아요 순으로 레시피 리스트를 넘겨준다.
     public ResponseDto<List<LikeCountDto>> getLikeRecipeList() {
         List<LikeCountDto> likeCountList = recipeService.getLikeCountList();
 

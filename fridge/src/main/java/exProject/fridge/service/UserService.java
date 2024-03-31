@@ -71,6 +71,11 @@ public class UserService {
         return userRecipeFavoriteRepository.findByUser(user);
     }
 
+    @Transactional(readOnly = true) // 좋아요 목록 가져오기
+    public List<LikeRecipe> getLikeRecipes(User user) {
+        return likeRecipeRepository.findByUser(user);
+    }
+
     @Transactional(readOnly = true) // 즐겨찾기를 누른 레시피 조회
     public Optional<UserRecipeFavorite> getFavorite(User user, Recipe recipe) {
         return userRecipeFavoriteRepository.findByUserAndRecipe(user, recipe);
@@ -89,5 +94,10 @@ public class UserService {
     @Transactional // 레시피 좋아요 업데이트
     public void updateLikeRecipe(LikeRecipe likeRecipe) {
         likeRecipeRepository.save(likeRecipe);
+    }
+
+    @Transactional // 유저 정보 저장
+    public void updateProfile(User user) {
+        userRepository.save(user);
     }
 }
